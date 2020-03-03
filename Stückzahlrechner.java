@@ -1,4 +1,6 @@
-package stückzahlrechner;
+# test
+
+package stÃ¼ckzahlrechner;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -25,7 +27,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.Window.Type;
 
-public class Stückzahlrechner extends JFrame {
+public class StÃ¼ckzahlrechner extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtTakt;
@@ -37,7 +39,7 @@ public class Stückzahlrechner extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Stückzahlrechner frame = new Stückzahlrechner();
+					StÃ¼ckzahlrechner frame = new StÃ¼ckzahlrechner();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +54,7 @@ public class Stückzahlrechner extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Stückzahlrechner() {
+	public StÃ¼ckzahlrechner() {
 		setType(Type.POPUP);
 		setTitle("St\u00FCckzahlrechner");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,23 +103,23 @@ public class Stückzahlrechner extends JFrame {
 		contentPane.add(lblAnzhwoche, gbc_lblAnzhwoche);
 		
 		
-		JLabel txtAnzStückzahl = new JLabel("");
-		GridBagConstraints gbc_txtAnzStückzahl = new GridBagConstraints();
-		gbc_txtAnzStückzahl.insets = new Insets(0, 0, 5, 5);
-		gbc_txtAnzStückzahl.gridx = 0;
-		gbc_txtAnzStückzahl.gridy = 4;
-		contentPane.add(txtAnzStückzahl, gbc_txtAnzStückzahl);
+		JLabel txtAnzStÃ¼ckzahl = new JLabel("");
+		GridBagConstraints gbc_txtAnzStÃ¼ckzahl = new GridBagConstraints();
+		gbc_txtAnzStÃ¼ckzahl.insets = new Insets(0, 0, 5, 5);
+		gbc_txtAnzStÃ¼ckzahl.gridx = 0;
+		gbc_txtAnzStÃ¼ckzahl.gridy = 4;
+		contentPane.add(txtAnzStÃ¼ckzahl, gbc_txtAnzStÃ¼ckzahl);
 		
 		
 		txtTakt = new JTextField();
 		txtTakt.setText("1");
 		
-		//Listener für das Textfeld bei Eingabe
+		//Listener fÃ¼r das Textfeld bei Eingabe
 		txtTakt.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent arg0) {
 				
-				txtAnzStückzahl.setText(""+ berechnen1(Double.parseDouble(txtTakt.getText().replace(',', '.')),Double.parseDouble((String)comboBox.getSelectedItem())));
+				txtAnzStÃ¼ckzahl.setText(""+ berechnen1(Double.parseDouble(txtTakt.getText().replace(',', '.')),Double.parseDouble((String)comboBox.getSelectedItem())));
 				
 				lblAnzhwoche.setText(txtHpWoche(1, (String)comboBox.getSelectedItem()));
 				
@@ -128,13 +130,13 @@ public class Stückzahlrechner extends JFrame {
 		
 		});
 		
-		//Listener für die ComboBox
+		//Listener fÃ¼r die ComboBox
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				
 				lblAnzhwoche.setText(txtHpWoche(1, (String)comboBox.getSelectedItem()));
 				
-				txtAnzStückzahl.setText(""+ berechnen1(Double.parseDouble(txtTakt.getText().replace(',', '.')),Double.parseDouble((String)comboBox.getSelectedItem())));
+				txtAnzStÃ¼ckzahl.setText(""+ berechnen1(Double.parseDouble(txtTakt.getText().replace(',', '.')),Double.parseDouble((String)comboBox.getSelectedItem())));
 			}
 		});
 		
@@ -165,7 +167,7 @@ public class Stückzahlrechner extends JFrame {
 	
 		
 	
-	}//ende Stückzahlrechner
+	}//ende StÃ¼ckzahlrechner
 	/*
 	public double berechnen(double takt_temp, double effektiveArbeitszeit_temp){
 		
